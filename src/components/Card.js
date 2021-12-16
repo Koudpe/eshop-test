@@ -2,31 +2,31 @@ import React, { useContext } from "react";
 
 import { CartContext } from "./../context/CartContext";
 
-const Card = ({ product }) => {
+const Card = ({ product, product:{count}, product:{id}, product:{name}, product:{price} }) => {
   const { countPlus, countMinus } = useContext(CartContext);
   const decrement = () => {
-    if (product.count >= 1) {
-      countMinus(product.id);
+    if (count >= 1) {
+      countMinus(id);
     }
   };
 
   const increment = () => {
-    countPlus(product.id);
+    countPlus(id);
   };
 
   return (
     <div className='card-wrap'>
       <div className='card'>
         <div>
-          <p>Název: {product.name}</p>
-          <p>Cena: {product.price}</p>
-          <p>ID: {product.id}</p>
-          <p>Cena celkem: {product.price * product.count}</p>
+          <p>Název: {name}</p>
+          <p>Cena: {price}</p>
+          <p>ID: {id}</p>
+          <p>Cena celkem: {price * count}</p>
         </div>
         <div className='center'>
           <div className='row'>
             <button onClick={decrement}>-</button>
-            <p>{product.count}</p>
+            <p>{count}</p>
             <button onClick={increment}>+</button>
           </div>
         </div>

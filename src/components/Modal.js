@@ -4,7 +4,7 @@ import { CartContext } from "./../context/CartContext";
 import Card from "./Card";
 
 const Modal = ({ showModal, setShowModal, product }) => {
-  const { products } = useContext(CartContext);
+  const { products, totalPrice } = useContext(CartContext);
   const closeModal = () => {
     setShowModal();
   };
@@ -26,7 +26,7 @@ const Modal = ({ showModal, setShowModal, product }) => {
                 </div>
               );
             })}
-            <h2>CELKEM:</h2>
+            <h2>CELKEM: {totalPrice}</h2>
           </div>
         </div>
       ) : null}
