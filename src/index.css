@@ -1,17 +1,184 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-html{
+html {
+  width: 100%;
+  min-height: 100vh;
   box-sizing: border-box;
+  padding: 10px;
+  background-color: grey;
+}
+
+.App{
+  width: 100%;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  width: 100%;
+  max-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.card-wrap {
+  width: 20%;
+  padding: 10px;
+}
+
+.card {
+  width: 100%;
+  height: 300px;
+  background-color: antiquewhite;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 99;
+}
+
+.cart-button-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cart-button {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blanchedalmond;
+}
+
+
+
+
+
+
+
+
+.modal-position{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-wrap{
+  width: 500px;
+  height: 500px;
+  background-color: grey;
+  padding: 20px 5px;
+  position: relative;
+  box-shadow: 5px 5px 25px 0px #111111;
+  overflow: scroll;
+}
+
+.modal-cross-wrap{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 5px;
+  right: 10px;
+}
+
+.modal-cross{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: block;
+  cursor: pointer;
+}
+.modal-cross::after{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  top: 8px;
+  left: 0;
+  transform: rotate(45deg);
+  background-color: #000000;
+}
+.modal-cross::before{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  top: 8px;
+  left: 0;
+  transform: rotate(-45deg);
+  background-color: #000000;
+}
+
+.card-cart{
+  width: 100%;
+}
+
+.card-cart .card-wrap{
+  width: 100%;
+}
+
+.card-cart .card-wrap .card{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-cart .center{
+  width: 100px;
+}
+
+button{
+  cursor: pointer;
 }
