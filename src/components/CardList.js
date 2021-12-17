@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
+import Button from "@mui/material/Button";
 
-import Card from "./Card";
+import CardX from "./Card";
 import Modal from "./Modal";
 import { CartContext } from "./../context/CartContext";
 
@@ -17,16 +18,14 @@ const CardList = () => {
   return (
     <div className='App'>
       <div className='button-wrapper'>
-        <button className='cart-button-wrap'>
-          <span className='cart-button' onClick={openModal}>
-            Cart
-          </span>
-        </button>
+        <Button variant='contained' onClick={openModal}>
+          <span>Cart</span>
+        </Button>
       </div>
 
       <div className='card-wrapper'>
         {products.map((product) => {
-          return <Card product={product} key={product.id} />;
+          return <CardX product={product} key={product.id} />;
         })}
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal} />

@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
+import Button from '@mui/material/Button';
 
 import { CartContext } from "./../context/CartContext";
+import Card from '@mui/material/Card';
 
-const Card = ({
+const CardX = ({
   product,
   product: { count },
   product: { id },
@@ -13,8 +15,6 @@ const Card = ({
   const decrement = () => {
     if (count >= 1) {
       countMinus(id);
-      const newCartItem = { name: product.name, price: product.price };
-      setCart((curr) => [...curr, newCartItem]);
     }
   };
 
@@ -26,7 +26,7 @@ const Card = ({
 
   return (
     <div className='card-wrap'>
-      <div className='card'>
+      <Card className='card'>
         <div>
           <p>Název: {name}</p>
           <p>Cena: {price}</p>
@@ -35,14 +35,14 @@ const Card = ({
         </div>
         <div className='center'>
           <div className='row'>
-            <button onClick={decrement}>-</button>
+            <Button variant="contained" onClick={decrement}>-</Button>
             <p>{count}</p>
-            <button onClick={increment}>+</button>
+            <Button variant="contained" onClick={increment}>+</Button>
           </div>
         </div>
-      </div>
+      </Card>
     </div>
   );
 };
 
-export default Card;
+export default CardX;

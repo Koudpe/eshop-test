@@ -37,7 +37,7 @@ div {
 
 .row {
   width: 100%;
-  max-width: 100px;
+  max-width: 170px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -176,7 +176,7 @@ div {
 }
 
 .card-cart .center{
-  width: 100px;
+  width: 200px;
 }
 
 button{

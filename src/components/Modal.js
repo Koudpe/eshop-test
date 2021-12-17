@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import { CartContext } from "./../context/CartContext";
-import Card from "./Card";
+import CardX from "./Card";
 
 const Modal = ({ showModal, setShowModal, product }) => {
   const { products, cart, setCart } = useContext(CartContext);
@@ -22,7 +22,7 @@ const Modal = ({ showModal, setShowModal, product }) => {
               return (
                 <div className='card-cart'>
                   {product.count ? (
-                    <Card product={product} key={product.id} />
+                    <CardX product={product} key={product.id} />
                   ) : null}
                 </div>
               );
