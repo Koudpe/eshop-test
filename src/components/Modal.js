@@ -4,7 +4,8 @@ import { CartContext } from "./../context/CartContext";
 import Card from "./Card";
 
 const Modal = ({ showModal, setShowModal, product }) => {
-  const { products, totalPrice } = useContext(CartContext);
+  const { products, cart, setCart } = useContext(CartContext);
+  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
   const closeModal = () => {
     setShowModal();
   };

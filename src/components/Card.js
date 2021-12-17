@@ -2,16 +2,26 @@ import React, { useContext } from "react";
 
 import { CartContext } from "./../context/CartContext";
 
-const Card = ({ product, product:{count}, product:{id}, product:{name}, product:{price} }) => {
-  const { countPlus, countMinus } = useContext(CartContext);
+const Card = ({
+  product,
+  product: { count },
+  product: { id },
+  product: { name },
+  product: { price },
+}) => {
+  const { countPlus, countMinus, cart, setCart } = useContext(CartContext);
   const decrement = () => {
     if (count >= 1) {
       countMinus(id);
+      const newCartItem = { name: product.name, price: product.price };
+      setCart((curr) => [...curr, newCartItem]);
     }
   };
 
   const increment = () => {
     countPlus(id);
+    const newCartItem = { name: product.name, price: product.price };
+    setCart((curr) => [...curr, newCartItem]);
   };
 
   return (

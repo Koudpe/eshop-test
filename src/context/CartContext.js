@@ -12,8 +12,6 @@ const CartContextProvider = (props) => {
     { name: "product6", price: 60, count: 0, id: 5 },
   ]);
 
-  const [totalPrice, setTotalPrice] = useState([0]);
-
   const countPlus = (id) => {
     const newCount = [...products];
     newCount[id].count++;
@@ -26,9 +24,7 @@ const CartContextProvider = (props) => {
     setProducts(newCount);
   };
 
-  const totalResult = () => {
-    
-  };
+  const [cart, setCart] = useState([]);
 
   return (
     <CartContext.Provider
@@ -37,7 +33,8 @@ const CartContextProvider = (props) => {
         setProducts,
         countPlus,
         countMinus,
-        totalPrice,
+        cart,
+        setCart,
       }}
     >
       {props.children}
